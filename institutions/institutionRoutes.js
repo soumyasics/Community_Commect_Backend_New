@@ -7,7 +7,7 @@ const {
   getAllInstitutions,
   editInstitueById,
   getInstituteById,
-} = require("./orphanageController.js");
+} = require("./institutionController.js");
 
 InstitutionRoutes.get("/", institutionCheck);
 InstitutionRoutes.post("/signup", upload, institutionSignup);
