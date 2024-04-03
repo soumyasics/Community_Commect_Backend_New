@@ -49,7 +49,7 @@ const instituteDonationRequestSchema = new mongoose.Schema(
     isAdminApproved: {
       type: String,
       enum: ["pending", "approved", "rejected"],
-      default: "pending",
+      default: "approved",
     },
     totallyCollectedAmount: {
       type: Number,

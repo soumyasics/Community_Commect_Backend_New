@@ -12,7 +12,7 @@ const donationRoutes = require("./donation/donationRoutes.js");
 const institutionRoutes = require("./institutions/institutionRoutes.js");
 const { campRoutes } = require("./camp/campRoutes.js");
 const insDonationRequestRoutes = require("./instituteDonationRequests/donationRequestRoutes.js");
-
+const insDonationRoutes = require("./instituteDonation/donationRoutes.js");
 app.use(express.static(`${__dirname}/upload`));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,9 +26,10 @@ app.use("/user", userRoutes);
 app.use("/orphanage", orphanageRoutes);
 app.use("/institute", institutionRoutes);
 app.use("/organization", organizationRoutes);
-app.use("/donation", donationRoutes);
 app.use("/donation-request", donationRequestRoutes);
+app.use("/donation", donationRoutes);
 app.use("/ins-donation-request", insDonationRequestRoutes);
+app.use("/ins-donation", insDonationRoutes);
 app.use("/camp", campRoutes)
 app.all("/*", (req, res) => {
   res.status(404).json({ message: "Route not found." });
