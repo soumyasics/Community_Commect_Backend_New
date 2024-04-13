@@ -22,19 +22,19 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Tvm Community working" });
 });
 
-app.use("/user", userRoutes);
-app.use("/orphanage", orphanageRoutes);
-app.use("/institute", institutionRoutes);
-app.use("/organization", organizationRoutes);
-app.use("/donation-request", donationRequestRoutes);
-app.use("/donation", donationRoutes);
-app.use("/ins-donation-request", insDonationRequestRoutes);
-app.use("/ins-donation", insDonationRoutes);
-app.use("/camp", campRoutes)
+app.use("/community_connect_api/user", userRoutes);
+app.use("/community_connect_api/orphanage", orphanageRoutes);
+app.use("/community_connect_api/institute", institutionRoutes);
+app.use("/community_connect_api/organization", organizationRoutes);
+app.use("/community_connect_api/donation-request", donationRequestRoutes);
+app.use("/community_connect_api/donation", donationRoutes);
+app.use("/community_connect_api/ins-donation-request", insDonationRequestRoutes);
+app.use("/community_connect_api/ins-donation", insDonationRoutes);
+app.use("/community_connect_api/camp", campRoutes)
 app.all("/*", (req, res) => {
   res.status(404).json({ message: "Route not found." });
 });
-const PORT = 5000;
+const PORT = 4014;
 app.listen(PORT, () => {
   console.log("Server started successfully on port ", PORT);
 });
